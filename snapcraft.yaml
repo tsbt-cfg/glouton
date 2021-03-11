@@ -30,4 +30,4 @@ architectures:
     
 parts:
   no-part:
-    plugin: nil    
+    build-snaps: glouton 
