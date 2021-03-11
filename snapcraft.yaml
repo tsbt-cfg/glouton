@@ -30,4 +30,5 @@ architectures:
     
 parts:
   no-part:
-    build-snaps: glouton 
+    build-snaps: 
+    - glouton 
