@@ -15,12 +15,12 @@ apps:
     plugs: 
     -hardware-observe
     -home
-    -network                  glouton:network                  :network                  -
-    -network-bind             glouton:network-bind             :network-bind             -
-    -network-control          glouton:network-control          :network-control          manual
-    -physical-memory-observe  glouton:physical-memory-observe  :physical-memory-observe  manual
-    -process-control          glouton:process-control          :process-control          manual
-    -system-observe           glouton:system-observe           :system-observe           manual
+    -network             
+    -network-bind
+    -network-control
+    -physical-memory-observe  
+    -process-control          
+    -system-observe           
      
 architectures:
   - build-on: armhf
