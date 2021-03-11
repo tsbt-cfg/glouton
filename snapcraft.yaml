@@ -1,0 +1,33 @@
+name: glouton-daemon
+base: core18
+version: '1.0'
+summary: daemonize glouton.
+description: |
+  Use this snap to send metrics to bleemeo.
+  
+grade: devel
+confinement: devmode
+
+apps:     
+  start:
+    daemon: oneshot
+    command: glouton --yes-run-as-root
+    plugs: 
+    -hardware-observe
+    -home
+    -network                  glouton:network                  :network                  -
+    -network-bind             glouton:network-bind             :network-bind             -
+    -network-control          glouton:network-control          :network-control          manual
+    -physical-memory-observe  glouton:physical-memory-observe  :physical-memory-observe  manual
+    -process-control          glouton:process-control          :process-control          manual
+    -system-observe           glouton:system-observe           :system-observe           manual
+     
+architectures:
+  - build-on: armhf
+    run-on: armhf
+  - build-on: arm64
+    run-on: arm64
+    
+parts:
+  no-part:
+    plugin: nil    
