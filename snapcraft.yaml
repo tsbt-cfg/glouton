@@ -20,8 +20,12 @@ apps:
     -network-control
     -physical-memory-observe  
     -process-control          
-    -system-observe           
-     
+    -system-observe         
+ env:
+    command: GLOUTON_BLEEMEO_ACCOUNT_ID= $1; GLOUTON_BLEEMEO_REGISTRATION_KEY= $2
+    
+ glouton:
+    command: $SNAP/glouton     
 architectures:
   - build-on: armhf
     run-on: armhf
@@ -29,6 +33,6 @@ architectures:
     run-on: arm64
     
 parts:
-  no-part:
+  glt-part:
     build-snaps: 
     - glouton 
